@@ -1,0 +1,42 @@
+{
+    "name": "godforhire/simple-qrcode",
+    "description": "Simple QrCode is a QR code generator made for Laravel.",
+    "keywords": ["qrcode", "laravel", "simple", "generator", "wrapper"],
+    "license" : "MIT",
+    "authors": [
+        {
+            "name": "godforhire"
+        }
+    ],
+    "require": {
+        "php": ">=7.2|^8.0",
+      	"ext-gd": "*",
+        "bacon/bacon-qr-code": "^3.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "~1",
+        "phpunit/phpunit": "~9"
+    },
+    "suggest": {
+        "ext-imagick": "Allows the generation of PNG QrCodes.",
+        "illuminate/support": "Allows for use within Laravel."
+    },
+    "autoload": {
+        "psr-4": {
+            "godforhire\\QrCode\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "godforhire\\QrCode\\QrCodeServiceProvider"
+            ],
+            "aliases": {
+                "QrCode": "godforhire\\QrCode\\Facades\\QrCode"
+            }
+        }
+    }
+}
